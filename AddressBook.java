@@ -102,7 +102,7 @@ public class AddressBook {
     			 System.out.println( PhoneNumber);
     					 
     			 System.out.println("Enter your email:");
-    			 addressbook.setEmail(sc.nextLine());
+    			 addressbook.setEmail(sc.next());
     			 String email= addressbook. getEmail();
     			 System.out.println(email);
     			 
@@ -139,18 +139,31 @@ public class AddressBook {
     			 System.out.println( PhoneNumber1);
     					 
     			 System.out.println("Enter your email:");
-    			 addressbook1.setEmail(sc.nextLine());
-    			 String email1= addressbook1. getEmail();
+    			 addressbook1.setEmail(sc.next());
+    			 String email1= addressbook1.getEmail();
     			 System.out.println(email1);
     			
     		 
-    		 l.add(addressbook);
-    		 l.add(addressbook1);
-    		 l1.addAll(l);
-    		 System.out.println("All list"+l1);
+    			 l.add(addressbook);
+    			 l.add(addressbook1);
+    			 l1.addAll(l);
+    			 System.out.println("All list"+l1);
+    		 
+    			 System.out.println("Edit record");
+    			 System.out.println("Enter name to edit:");
+    			 for(int m=0;m<l1.size();m++){
+    				 addressbook=l1.get(m);
+    			 if(sc.nextLine().equals(addressbook.firstname)) {
+    				 System.out.println("Enter new city:");
+    				 addressbook.setCity(sc.nextLine());
+    				 System.out.println("List After is"+l1.toString());
+    				 break;
+    			 }else {
+    				 System.out.println("User not found");
+    			 }
+    		}
     		
-        }
-
+       }
 
 }
 
